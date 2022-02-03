@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+from playerdetails import players
 
 root = Tk()
 root.title("Dice Game")
@@ -24,7 +25,15 @@ password_input.grid(row=1,column=1)
 
 
 def signin():
-    messagebox.showerror("Error", "User not found")
+    try:
+        players[username_input.get()]
+        print("Username Correct")
+        print(players[password_input.get])
+        print(password_input.get)
+        if players[password_input.get] == password_input.get:
+            print("Password Correct")
+    except KeyError:
+        messagebox.showerror("Error", "User not found")
 
 def register():
     return
