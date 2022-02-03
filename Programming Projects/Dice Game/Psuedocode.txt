@@ -1,0 +1,9 @@
+user = input("Enter your name")
+pass = input("Enter your password")
+
+while True:
+    if user and pass in database:
+        display game screen
+        break
+    else:
+        display error message
