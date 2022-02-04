@@ -3,7 +3,8 @@ from tkinter import messagebox
 from playerdetails import players
 
 root = Tk()
-root.title("Dice Game")
+root.title("Player 1 Login")
+root.geometry("250x125")
 root.resizable(False,False)
 
 
@@ -26,14 +27,16 @@ password_input.grid(row=1,column=1)
 
 def signin():
     try:
-        players[username_input.get()]
-        print("Username Correct")
-        print(players[password_input.get])
-        print(password_input.get)
-        if players[password_input.get] == password_input.get:
-            print("Password Correct")
+        if players[username_input.get()] != password_input.get():
+            messagebox.showerror("KeyError", "Incorrect password")
+        else:
+            #root.destroy()
+            exec(open("GitHub\Computer-Science\Programming Projects\Dice Game\player2login.py").read())
+            
+            
     except KeyError:
-        messagebox.showerror("Error", "User not found")
+        messagebox.showerror("KeyError", "Incorrect username")
+    
 
 def register():
     return

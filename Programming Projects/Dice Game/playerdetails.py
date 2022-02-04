@@ -1,4 +1,4 @@
 players = {
     "dominik" : "password",
-    "harry" : "password"
+    "harry" : "password2"
 }
