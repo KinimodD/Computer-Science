@@ -7,6 +7,8 @@ root.title("Player 1 Login")
 root.geometry("250x125")
 root.resizable(False,False)
 
+player1loggedin = False
+player2loggedin = False
 
 my_frame = LabelFrame(root, padx=10,pady=10)
 my_frame.pack(pady=10, padx=10)
@@ -17,6 +19,7 @@ username_label.grid(row=0,column=0)
 
 username_input = Entry(my_frame)#Entry
 username_input.grid(row=0,column=1)
+
 
 password_label = Label(my_frame, text="Password:")#Label
 password_label.grid(row=1, column=0)
@@ -30,8 +33,10 @@ def signin():
         if players[username_input.get()] != password_input.get():
             messagebox.showerror("KeyError", "Incorrect password")
         else:
-            #root.destroy()
-            exec(open("Computer-Science\Programming Projects\Dice Game\player2login.py").read())
+            global player1loggedin
+            player1loggedin = True
+            
+            
             
             
     except KeyError:

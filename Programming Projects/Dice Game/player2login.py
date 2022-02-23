@@ -30,7 +30,7 @@ def signin():
         if players[username_input.get()] != password_input.get():
             messagebox.showerror("KeyError", "Incorrect password")
         else:
-            exec(open("GitHub\Computer-Science\Programming Projects\Dice Game\game.py").read())
+            exec(open("Computer-Science\Programming Projects\Dice Game\game.py").read())
             
     except KeyError:
         messagebox.showerror("KeyError", "Incorrect username")
