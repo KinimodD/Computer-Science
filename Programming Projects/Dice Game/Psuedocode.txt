@@ -7,3 +7,6 @@ while True:
         break
     else:
         display error message
+
+
+redo of healer
