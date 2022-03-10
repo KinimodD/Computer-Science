@@ -1,1 +1,0 @@
-exec(open("Computer-Science\Programming Projects\Dice Game\logins.py").read())
