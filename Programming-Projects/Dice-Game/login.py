@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+from turtle import color
 from playerdetails import players
 from welcome import Welcome
 
@@ -52,6 +53,7 @@ class Window(Tk):
                         player2loggedin = True
 
                         ready2 = Label(self, text="Player 2 ready")#Label
+                        ready2.config(bg="#1f58d1",fg="#FFFFFF")
                         ready2.pack()
 
                         player2name = username_input.get()
@@ -74,6 +76,7 @@ class Window(Tk):
                         player1loggedin = True
 
                         ready1 = Label(self, text="Player 1 ready")#Label
+                        ready1.config(bg="#1f58d1", fg="#FFFFFF")
                         ready1.pack()
 
                         player1name = username_input.get()
@@ -96,7 +99,7 @@ class Window(Tk):
         sign_up = Button(signregframe,text="Sign In", command=signin)
         sign_up.grid(row=0, column=0, pady=5,padx=5)
 
-        sign_up = Button(signregframe,text="Register", command=lambda: register(username_input.get(), password_input.get()))
+        sign_up = Button(signregframe,text="Register", command=lambda: register(username_input.get(), password_input.get()), state=DISABLED)
         sign_up.grid(row=0, column=1, pady=5,padx=5)
 
 if __name__== "__main__":

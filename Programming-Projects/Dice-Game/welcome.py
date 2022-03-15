@@ -17,7 +17,7 @@ class Welcome(Tk):
 
 
         #Image
-        self.dice = Image.open("Programming-Projects\Dice-Game\dice.jpg")
+        self.dice = Image.open("GitHub\Computer-Science\Programming-Projects\Dice-Game\dice.jpg")
         #self.dice = self.dice.resize((100,100), Image.ANTIALIAS)
         self.diceimg = ImageTk.PhotoImage(self.dice)
         self.imagelbl = Label(self, image=self.diceimg)
