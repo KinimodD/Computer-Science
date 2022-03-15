@@ -1,9 +1,6 @@
 from tkinter import *
-from welcome import Welcome
 import random
 from PIL import Image, ImageTk
-
-Welcome.destroy()
 
 class Game(Tk):
     def __init__(self):
@@ -20,20 +17,3 @@ class Game(Tk):
 
         self.roll = Button(self, text="Roll dice", command=rollDice)
         self.roll.grid(row=1,column=1)
-
-
-if __name__== "__main__":
-    myGame = Game()
-    myGame.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-mainloop()

@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from playerdetails import players
-
+from welcome import Welcome
 
 class Window(Tk):
     def __init__(self):
@@ -56,12 +56,11 @@ class Window(Tk):
 
                         player2name = username_input.get()
 
-                        exec(open("Computer-Science\Programming-Projects\Dice-Game\welcome.py").read())
+                        self.destroy()
 
+                        welcomeWindow = Welcome()
+                        welcomeWindow.mainloop()
 
-                        
-                        
-                        
                         
                 except KeyError:
                     messagebox.showerror("KeyError", "Incorrect username")
@@ -82,10 +81,6 @@ class Window(Tk):
                         username_input.delete(0, END)
                         password_input.delete(0, END)
 
-
-                        
-                        
-                        
                         
                 except KeyError:
                     messagebox.showerror("KeyError", "Incorrect username")
@@ -103,8 +98,6 @@ class Window(Tk):
 
         sign_up = Button(signregframe,text="Register", command=lambda: register(username_input.get(), password_input.get()))
         sign_up.grid(row=0, column=1, pady=5,padx=5)
-
-
 
 if __name__== "__main__":
     myApp = Window()

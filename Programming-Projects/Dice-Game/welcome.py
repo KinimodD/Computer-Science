@@ -1,5 +1,6 @@
 from tkinter import *
 #from login import player1name
+from game import Game
 from PIL import Image,ImageTk
 
 class Welcome(Tk):
@@ -11,12 +12,12 @@ class Welcome(Tk):
         #self.playerswelcome = player1name
 
         #Welcome Message
-        self.message = Label(self, text=f"Welcome to Dice Roller, {self.playerswelcome}")
-        self.message.pack()
+        #self.message = Label(self, text=f"Welcome to Dice Roller, {self.playerswelcome}")
+        #self.message.pack()
 
 
         #Image
-        self.dice = Image.open("Computer-Science\Programming-Projects\Dice-Game\dice.jpg")
+        self.dice = Image.open("Programming-Projects\Dice-Game\dice.jpg")
         #self.dice = self.dice.resize((100,100), Image.ANTIALIAS)
         self.diceimg = ImageTk.PhotoImage(self.dice)
         self.imagelbl = Label(self, image=self.diceimg)
@@ -24,12 +25,10 @@ class Welcome(Tk):
         self.imagelbl.pack()
 
         def play():
-            exec(open("Computer-Science\Programming-Projects\Dice-Game\game.py").read())
+            self.destroy()
+            gameWindow = Game()
+            gameWindow.mainloop()
 
         self.playbtn = Button(self, text="Play", command=play, padx=50)
         self.playbtn.pack()
         
-
-if __name__== "__main__":
-    myApp = Welcome()
-    myApp.mainloop()

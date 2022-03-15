@@ -1,1 +1,3 @@
-exec(open("Computer-Science\Programming-Projects\Dice-Game\login.py").read())
+from login import Window
+runWindow = Window()
+runWindow.mainloop()
