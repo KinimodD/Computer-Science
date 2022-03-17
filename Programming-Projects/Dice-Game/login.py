@@ -1,21 +1,20 @@
 from tkinter import *
 from tkinter import messagebox
-from turtle import color
 from playerdetails import players
-from welcome import Welcome
+import welcome
 
 class Window(Tk):
     def __init__(self):
         super().__init__()
-        global player1loggedin,player2loggedin
-        #global player1name, player2name
+        
+        #self.player = player
+
         self.title("Login")
         self.geometry("250x175")
         self.config(bg="#1f58d1")
         self.resizable(False,False)
 
-        player1loggedin = False
-        player2loggedin = False
+        self.playerloggedin = False
 
         my_frame = LabelFrame(self, padx=10,pady=10)
         my_frame.config(bg="#8aa1d1")
@@ -41,52 +40,27 @@ class Window(Tk):
 
 
         def signin():
-            global player1loggedin, player2loggedin
-            global player1name, player2name
+            try:
+                if players[username_input.get()] != password_input.get():
+                    messagebox.showerror("KeyError", "Incorrect password")
+                else:
+                    self.playerloggedin = True
 
-            if player1loggedin == True:
-                try:
-                    if players[username_input.get()] != password_input.get():
-                        messagebox.showerror("KeyError", "Incorrect password")
-                    else:
-                        
-                        player2loggedin = True
+                    ready = Label(self, text="Player ready")#Label
+                    ready.config(bg="#1f58d1", fg="#FFFFFF")
+                    ready.pack()
 
-                        ready2 = Label(self, text="Player 2 ready")#Label
-                        ready2.config(bg="#1f58d1",fg="#FFFFFF")
-                        ready2.pack()
+                    self.playername = username_input.get()
 
-                        player2name = username_input.get()
+                    welcome.Welcome(self.playername)
+                    self.withdraw()
 
-                        self.destroy()
+                    
+            except KeyError:
+                messagebox.showerror("KeyError", "Incorrect username")
 
-                        welcomeWindow = Welcome()
-                        welcomeWindow.mainloop()
 
-                        
-                except KeyError:
-                    messagebox.showerror("KeyError", "Incorrect username")
-            else:
-
-                try:
-                    if players[username_input.get()] != password_input.get():
-                        messagebox.showerror("KeyError", "Incorrect password")
-                    else:
-                        
-                        player1loggedin = True
-
-                        ready1 = Label(self, text="Player 1 ready")#Label
-                        ready1.config(bg="#1f58d1", fg="#FFFFFF")
-                        ready1.pack()
-
-                        player1name = username_input.get()
-
-                        username_input.delete(0, END)
-                        password_input.delete(0, END)
-
-                        
-                except KeyError:
-                    messagebox.showerror("KeyError", "Incorrect username")
+                
             
 
         def register(username,password):

@@ -12,7 +12,10 @@ with open('Computer-Science/Programming-Projects/Reading Files/names.txt') as fi
 	for line in file_object:
 	    print(line)
 '''
+myNames = []
 with open('Computer-Science/Programming-Projects/Reading Files/names.txt') as file_object:
 	lines = file_object.readlines()
 	for line in lines:
-		print(line.rstrip())
+		line = line.rstrip()
+		myNames.append(line)
+	print(myNames)

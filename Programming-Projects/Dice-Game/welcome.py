@@ -1,33 +1,30 @@
 from tkinter import *
-#from login import player1name
 from game import Game
 from PIL import Image,ImageTk
 
-class Welcome(Tk):
-    def __init__(self):
+class Welcome(Toplevel):
+    def __init__(self,playername):
         super().__init__()
         self.title("Welcome")
         self.geometry("400x400")
-        
-        #self.playerswelcome = player1name
+        self.playername = playername
 
         #Welcome Message
-        #self.message = Label(self, text=f"Welcome to Dice Roller, {self.playerswelcome}")
-        #self.message.pack()
+        self.w_message1 = Label(self, text=f"Welcome to Dice Roller, {self.playername}")
+        self.w_message1.pack()
 
 
         #Image
-        self.dice = Image.open("GitHub\Computer-Science\Programming-Projects\Dice-Game\dice.jpg")
+        self.dice = Image.open("Computer-Science\Programming-Projects\Dice-Game\dice.jpg")
         #self.dice = self.dice.resize((100,100), Image.ANTIALIAS)
         self.diceimg = ImageTk.PhotoImage(self.dice)
-        self.imagelbl = Label(self, image=self.diceimg)
+        self.imagelbl = Label(self,image=self.diceimg)
         self.imagelbl.config(image=self.diceimg)
         self.imagelbl.pack()
 
         def play():
             self.destroy()
-            gameWindow = Game()
-            gameWindow.mainloop()
+            Game()
 
         self.playbtn = Button(self, text="Play", command=play, padx=50)
         self.playbtn.pack()
