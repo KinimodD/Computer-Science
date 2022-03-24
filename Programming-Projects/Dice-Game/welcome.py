@@ -24,7 +24,7 @@ class Welcome(Toplevel):
 
         def play():
             self.destroy()
-            Game()
+            Game(self.playername)
 
         self.playbtn = Button(self, text="Play", command=play, padx=50)
         self.playbtn.pack()
