@@ -1,3 +1,6 @@
+# The actual game is stored in this file
+
+# Imports
 from tkinter import *
 from random import randint
 from PIL import Image, ImageTk
@@ -10,23 +13,23 @@ class Game(Tk):
 
         def numToImg(dice):
             if dice == 1:
-                diceimg = Image.open("Computer-Science\Programming-Projects\Dice-Game\one.jpg")
+                diceimg = Image.open("Dice-Game\dice side images\one.jpg")
                 self.diceimgtk = ImageTk.PhotoImage(diceimg)
 
             elif dice == 2:
-                diceimg = Image.open("Computer-Science/Programming-Projects/Dice-Game/two.jpg")
+                diceimg = Image.open("Dice-Game/dice side images/two.jpg")
                 self.diceimgtk = ImageTk.PhotoImage(diceimg)
             elif dice == 3:
-                diceimg = Image.open("Computer-Science/Programming-Projects/Dice-Game/three.jpg")
+                diceimg = Image.open("Dice-Game\dice side images/three.jpg")
                 self.diceimgtk = ImageTk.PhotoImage(diceimg)
             elif dice == 4:
-                diceimg = Image.open("Computer-Science/Programming-Projects/Dice-Game/four.jpg")
+                diceimg = Image.open("Dice-Game\dice side images/four.jpg")
                 self.diceimgtk = ImageTk.PhotoImage(diceimg)
             elif dice == 5:
-                diceimg = Image.open("Computer-Science/Programming-Projects/Dice-Game/five.jpg")
+                diceimg = Image.open("Dice-Game\dice side images/five.jpg")
                 self.diceimgtk = ImageTk.PhotoImage(diceimg)
             elif dice == 6:
-                diceimg = Image.open("Computer-Science/Programming-Projects/Dice-Game/six.jpg")
+                diceimg = Image.open("Dice-Game\dice side images\six.jpg")
                 self.diceimgtk = ImageTk.PhotoImage(diceimg)
             else:
                 return "Error"

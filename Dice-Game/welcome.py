@@ -1,3 +1,7 @@
+# This file contains the welcome screen
+
+
+# Imports
 from tkinter import *
 from game import Game
 from PIL import Image,ImageTk
@@ -15,7 +19,7 @@ class Welcome(Toplevel):
 
 
         #Image
-        self.dice = Image.open("Computer-Science\Programming-Projects\Dice-Game\dice.jpg")
+        self.dice = Image.open("Dice-Game\welcome.jpg")
         #self.dice = self.dice.resize((100,100), Image.ANTIALIAS)
         self.diceimg = ImageTk.PhotoImage(self.dice)
         self.imagelbl = Label(self,image=self.diceimg)

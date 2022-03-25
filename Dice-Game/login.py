@@ -1,3 +1,6 @@
+# This file stores the login screen, it also gets run first
+
+# Imports
 from tkinter import *
 from tkinter import messagebox
 from playerdetails import players
