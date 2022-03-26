@@ -15,7 +15,6 @@ class Game(Tk):
             if dice == 1:
                 diceimg = Image.open("Dice-Game\dice side images\one.jpg")
                 self.diceimgtk = ImageTk.PhotoImage(diceimg)
-
             elif dice == 2:
                 diceimg = Image.open("Dice-Game/dice side images/two.jpg")
                 self.diceimgtk = ImageTk.PhotoImage(diceimg)
@@ -36,7 +35,6 @@ class Game(Tk):
 
 
 
-        self.player = 1
         self.turn = Label(self, text=(playername + "'s", "turn"))
         self.turn.grid(row=0,columnspan=3,column=0)
 
@@ -49,7 +47,6 @@ class Game(Tk):
             img1 = Label(self, image=self.diceimgtk)
             img1.grid(row=1,column=0)
             img1.image = self.diceimgtk
-
             
             numToImg(dice2)
 
@@ -59,7 +56,3 @@ class Game(Tk):
 
         self.roll = Button(self, text="Roll dice", command=rollDice)
         self.roll.grid(row=1,column=2)
-
-'''if __name__== "__main__":
-    myApp = Game()
-    myApp.mainloop()'''
