@@ -8,12 +8,16 @@ from PIL import Image, ImageTk
 class Game(Toplevel):
     def __init__(self,playername):
         super().__init__()
+        self.playerTurn = True
         self.title("Dice Game")
         self.geometry("500x500")
-        self.turn = Label(self, text=(playername + "'s", "turn"))
+        self.resizable(0,0)
+
+        self.playername = playername
+        self.turn = Label(self, text=(self.playername + "'s", "turn"))
         self.turn.grid(row=0,columnspan=3,column=0)
         self.roll = Button(self, text="Roll dice", command=self.rollDice)
-        self.roll.grid(row=1,column=2)
+        self.roll.grid(row=2,column=1)
 
     def numToImg(self,dice):
         if dice == 1:
@@ -40,8 +44,13 @@ class Game(Toplevel):
 
 
 
-
     def rollDice(self):
+        if self.playerTurn == True:
+            self.turn.config(text=(self.playername + "'s", "turn"))
+            self.playerTurn = False
+        elif self.playerTurn == False:
+            self.turn.config(text=("CPU's", "turn"))
+            self.playerTurn = True
         dice1 = randint(1,6)
         dice2 = randint(1,6)
         
@@ -54,7 +63,7 @@ class Game(Toplevel):
         self.numToImg(dice2)
 
         img2 = Label(self, image=self.diceimgtk)
-        img2.grid(row=1,column=1)
+        img2.grid(row=1,column=2)
 
 
        

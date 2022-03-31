@@ -7,7 +7,7 @@ from playerdetails import players
 import welcome
 
 class Window(Tk):
-    def __init__(self):
+    def __init__(self): # Constructor
         super().__init__()
         
         #self.player = player
