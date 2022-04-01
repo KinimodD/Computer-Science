@@ -32,22 +32,22 @@ class Game(Toplevel):
 
     def numToImg(self,dice):
         if dice == 1:
-            diceimg = Image.open("Computer-Science\Dice-Game\dice side images\one.jpg")
+            diceimg = Image.open("Dice-Game\dice side images\one.jpg")
             self.diceimgtk = ImageTk.PhotoImage(diceimg)
         elif dice == 2:
-            diceimg = Image.open("Computer-Science\Dice-Game/dice side images/two.jpg")
+            diceimg = Image.open("Dice-Game/dice side images/two.jpg")
             self.diceimgtk = ImageTk.PhotoImage(diceimg)
         elif dice == 3:
-            diceimg = Image.open("Computer-Science\Dice-Game\dice side images/three.jpg")
+            diceimg = Image.open("Dice-Game\dice side images/three.jpg")
             self.diceimgtk = ImageTk.PhotoImage(diceimg)
         elif dice == 4:
-            diceimg = Image.open("Computer-Science\Dice-Game\dice side images/four.jpg")
+            diceimg = Image.open("Dice-Game\dice side images/four.jpg")
             self.diceimgtk = ImageTk.PhotoImage(diceimg)
         elif dice == 5:
-            diceimg = Image.open("Computer-Science\Dice-Game\dice side images/five.jpg")
+            diceimg = Image.open("Dice-Game\dice side images/five.jpg")
             self.diceimgtk = ImageTk.PhotoImage(diceimg)
         elif dice == 6:
-            diceimg = Image.open("Computer-Science\Dice-Game\dice side images\six.jpg")
+            diceimg = Image.open("Dice-Game\dice side images\six.jpg")
             self.diceimgtk = ImageTk.PhotoImage(diceimg)
         else:
             return "Error"
