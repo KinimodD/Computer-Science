@@ -11,12 +11,23 @@ class Game(Toplevel):
         self.playerTurn = True
         self.title("Dice Game")
         self.geometry("500x500")
-        self.resizable(0,0)
+        #self.resizable(0,0)
+
+        gameFrame = Frame(self)
+        self.gameFrame = gameFrame
+        gameFrame.pack(anchor=W, padx=10, pady=10)
+
+        logFrame = Frame(self)
+        self.logFrame = logFrame
+        logFrame.pack(anchor=E, padx=10, pady=10)
+
+        Label(logFrame, text="Hello World").pack()
+
 
         self.playername = playername
-        self.turn = Label(self, text=(self.playername + "'s", "turn"))
+        self.turn = Label(gameFrame, text=(self.playername + "'s", "turn"))
         self.turn.grid(row=0,columnspan=3,column=0)
-        self.roll = Button(self, text="Roll dice", command=self.rollDice)
+        self.roll = Button(gameFrame, text="Roll dice", command=self.rollDice)
         self.roll.grid(row=2,column=1)
 
     def numToImg(self,dice):
@@ -50,19 +61,21 @@ class Game(Toplevel):
             self.playerTurn = False
         elif self.playerTurn == False:
             self.turn.config(text=("CPU's", "turn"))
+            self.roll.config(state=DISABLED)
             self.playerTurn = True
+
         dice1 = randint(1,6)
         dice2 = randint(1,6)
         
         self.numToImg(dice1)
         
-        img1 = Label(self, image=self.diceimgtk)
+        img1 = Label(self.gameFrame, image=self.diceimgtk)
         img1.grid(row=1,column=0)
         img1.image = self.diceimgtk
         
         self.numToImg(dice2)
 
-        img2 = Label(self, image=self.diceimgtk)
+        img2 = Label(self.gameFrame, image=self.diceimgtk)
         img2.grid(row=1,column=2)
 
 
